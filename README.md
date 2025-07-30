@@ -68,6 +68,13 @@ VALUES(null,
 );
 ```
 
+```bash
+# Archivos de Insomnia - Puedes importar las peticiones directamente desde la carpeta:
+imsomnia
+ - Project ForoHUB Requests_Insomnia_2025-07-29.yaml
+ - Project ForoHUB_Requests_Insomnia_2025-07-29.har
+```
+
 ## 🙌 Contribuciones
 ¡Las contribuciones son bienvenidas! Siéntete libre de abrir un issue o hacer un pull request.
 
