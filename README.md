@@ -53,12 +53,20 @@ server.port=9090 <- EN CASO TENGAS CONFLICTO CON PUERTOS USADOS
 api.security.token.secret=${JWT_SECRET_VOLLMED:12345678} <- RECUERDA DEFINIR TU TOKEN COMO VARIABLE DE ENTORNO, EN TODO CASO USAR UNA POR DEFECTO
 ```
 
-```
+```bash
 # Para mayor flexibilidad establece variables gloables en POSTMAN o INSOMNIA
 "bearer": "TU_JWT_GENERADO_AL_INICIAR_SESION"
 "BASE_URL": "TU_URL" (ej: http://localhost:9090)
 ```
 
+```bash
+# Recuerda registrar tu usuario en la tabla Usuarios, a continuacion te dejo un script de ejemplo que puedes usar:
+INSERT INTO usuarios
+VALUES(null,
+'smith.milla@mail.com',
+'$2a$10$1Awmu6wAEo05tX1I9IloJuOV7.3KHXMSPsX9//nX.y34OLnyvrHay'
+);
+```
 
 ## 🙌 Contribuciones
 ¡Las contribuciones son bienvenidas! Siéntete libre de abrir un issue o hacer un pull request.
