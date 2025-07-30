@@ -1,0 +1,225 @@
+type: collection.insomnia.rest/5.0
+name: Challenge Alura LATAM - Foro HUB
+meta:
+  id: wrk_b6919571fb71440184d7cc9a0b90b312
+  created: 1753759634332
+  modified: 1753759634332
+  description: ""
+collection:
+  - name: ForoHUB_API
+    meta:
+      id: fld_783b5c929d8a416b81f425e60e77d19a
+      created: 1753759690004
+      modified: 1753844022903
+      sortKey: -1753759690004
+      description: ""
+    children:
+      - name: Authentication
+        meta:
+          id: fld_e22e95602c8146fda2ac8f77c9d61359
+          created: 1753759708423
+          modified: 1753759748215
+          sortKey: -1753759708623
+          description: ""
+        children:
+          - url: "{{ _.BASE_URL }}/login"
+            name: Iniciar Sesion
+            meta:
+              id: req_1c168ed8050849a0b01f567186c87c6b
+              created: 1753759862164
+              modified: 1753768262323
+              isPrivate: false
+              description: ""
+              sortKey: -1753759862164
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"login" : "smith.milla@mail.com",
+                	"contrasena" : "12345"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+      - name: Topicos
+        meta:
+          id: fld_64fdf7dd3e1a4c258f2a7ff418d39938
+          created: 1753759744302
+          modified: 1753759746628
+          sortKey: -1753759708523
+          description: ""
+        children:
+          - url: "{{ _.BASE_URL }}/topicos"
+            name: Listar Topicos
+            meta:
+              id: req_1bd396d5454940918413903c50384dd8
+              created: 1753759751755
+              modified: 1753841151385
+              isPrivate: false
+              description: ""
+              sortKey: -1753759833933
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            authentication:
+              type: bearer
+              token: "{{ _.bearer }}"
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/topicos"
+            name: Registrar Topico
+            meta:
+              id: req_33c7f8c37c94420f947601b396084114
+              created: 1753759773330
+              modified: 1753839814607
+              isPrivate: false
+              description: ""
+              sortKey: -1753759815061
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"autor": 2,
+                	"titulo": "Uso de GitBash",
+                	"mensaje": "Ayuda! No se usar el git bash",
+                	"curso": "GITHUB"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            authentication:
+              type: bearer
+              token: "{{ _.bearer }}"
+              disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/topicos"
+            name: Actualizar Topico
+            meta:
+              id: req_6667819593dd49f78008027fd016661c
+              created: 1753759785997
+              modified: 1753841780304
+              isPrivate: false
+              description: ""
+              sortKey: -1753759805675
+            method: PUT
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                	"id": 5,
+                	"titulo" : "AGREGAR CAMBIOS",
+                	"mensaje": "Ayuda! Como agrego cambios a un commit?",
+                	"curso": "GITHUB"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/11.2.0
+            authentication:
+              type: bearer
+              token: "{{ _.bearer }}"
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/topicos/6"
+            name: Eliminar Topico
+            meta:
+              id: req_372c98b8ffe74c0d92ca0ff005c115c5
+              created: 1753759796289
+              modified: 1753839212326
+              isPrivate: false
+              description: ""
+              sortKey: -1753759796289
+            method: DELETE
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            authentication:
+              type: bearer
+              token: "{{ _.bearer }}"
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.BASE_URL }}/topicos/7"
+            name: Listar Topico Por ID
+            meta:
+              id: req_23303cd7ec6341e4bf0b7859aa9ade44
+              created: 1753759833833
+              modified: 1753841409940
+              isPrivate: false
+              description: ""
+              sortKey: -1753759833833
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/11.2.0
+            authentication:
+              type: bearer
+              token: "{{ _.bearer }}"
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+    environment:
+      bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgZm9yb2h1YiIsInN1YiI6InNtaXRoLm1pbGxhQG1haWwuY29tIiwiZXhwIjoxNzUzODQ1Mjg1fQ.YfNh9NDJlmdYDAS0LdXbmTNhqCuC2p1_K9jGlzzftHM
+      BASE_URL: http://localhost:9090
+    environmentPropertyOrder:
+      "&":
+        - bearer
+        - BASE_URL
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_1c30eaec91eb7bd1a50bdb603884e4821aa050ae
+    created: 1753759634336
+    modified: 1753759634336
+environments:
+  name: Base Environment
+  meta:
+    id: env_1c30eaec91eb7bd1a50bdb603884e4821aa050ae
+    created: 1753759634335
+    modified: 1753759634335
+    isPrivate: false
